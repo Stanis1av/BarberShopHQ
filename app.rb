@@ -4,11 +4,13 @@ require 'sinatra/reloader'
 require 'sinatra/activerecord'
 
 # Создание подключения к БД
-set :datebase, "sqlite3:barbershop.db"
+set :database, {adapter: "sqlite3", database: "barbershop.db"}
 
 # Создание сущности
-# создаю класс который наследуется от AR
+# создаю класс который наследуется от AR, что значит, что в классе Client
+# будут все методы которые есть в ActiveRecord
 class Client < ActiveRecord::Base
+end
 
 get '/' do
   erb :index

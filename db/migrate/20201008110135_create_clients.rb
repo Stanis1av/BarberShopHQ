@@ -1,6 +1,6 @@
 class CreateClients < ActiveRecord::Migration[6.0]
   def change
-    craete_table :client do |t|
+    create_table :client do |t|
       t.text :name
       t.text :phone
       t.text :datestamp

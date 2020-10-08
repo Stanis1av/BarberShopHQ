@@ -1,4 +1,9 @@
 <div>
   <br/>
-  <p>You are using - <a href="http://sinatrarb.com/">Sinatra</a> and <a href="https://getbootstrap.com/">Bootstrap</a></p>
+  <h1>Список Парикмахеров</h1>
+  <% @barber.each do |barber| %>
+    <p>
+      <%= barber.name %>
+    </p>
+  <%end %>
 </div>

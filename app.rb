@@ -15,22 +15,24 @@ end
 class Barber < ActiveRecord::Base
 end
 
-
+before do
+    @barbers = Barber.all
+end
 
 get '/' do
-  @barber = Barber.all
   erb :index
 end
 
-get '/page1' do
-  erb :page1
+get '/visit' do
+  erb :visit
 end
 
-get '/page2' do
-  erb :page2
-end
+post '/visit' do
+  @username = params[:username]
+  @phone = params[:phone]
+  @datestamp = params[:datestamp]
+  @hairdresser = params[:hairdresser]
+  @color = params[:color]
 
-post '/' do
-  erb :index
-end
 
+end

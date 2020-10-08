@@ -34,5 +34,7 @@ post '/visit' do
   @hairdresser = params[:hairdresser]
   @color = params[:color]
 
+  Barber.create { :name => @username, :phone => @phone, :datestamp => @datestamp
+                  :barber => @hairdresser, :color => @color }
 
 end

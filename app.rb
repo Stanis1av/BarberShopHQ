@@ -39,9 +39,13 @@ end
 
 post '/visit' do
   c = Client.new params[:client]
-  c.save
 
-  erb :visit
+  if c.save
+    erb "Вы записаоись!"
+  else
+    erb "Ошибка!"
+  end
+
 end
 
 post '/contacts' do

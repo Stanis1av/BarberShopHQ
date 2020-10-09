@@ -3,7 +3,7 @@
   <h1>Список Парикмахеров</h1>
   <% @barbers.each do |barber| %>
     <p>
-      <%= barber.name %>
+      <a href="/barber/<%= barber.id%>"><%= barber.name %></a>
     </p>
   <%end %>
 </div>

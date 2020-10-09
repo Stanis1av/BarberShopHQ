@@ -34,13 +34,9 @@ get '/contacts' do
 end
 
 post '/visit' do
-  @username = params[:username]
-  @phone = params[:phone]
-  @datestamp = params[:datestamp]
-  @hairdresser = params[:hairdresser]
-  @color = params[:color]
+  c = Client.new params[:client]
+  c.save
 
-  Client.create(name: @username, phone: @phone, datestamp: @datestamp, barber: @hairdresser, color: @color)
   erb :visit
 end
 

@@ -43,3 +43,12 @@ post '/visit' do
   Client.create(name: @username, phone: @phone, datestamp: @datestamp, barber: @hairdresser, color: @color)
   erb :visit
 end
+
+post '/contacts' do
+  @mail = params[:mail]
+  @textbox = params[:textbox]
+
+  Contact.create(mail: @mail, message: @textbox)
+
+  erb :contacts
+end
